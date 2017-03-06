@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="blocTime">
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>blocTime</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <script src="https://use.fontawesome.com/d3988f6509.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+  <body>
+    <div class="pure-g">
+      <div class="pure-u-1-3 taskContainer" ng-controller="TaskCtrl">
+        <p>Task history</p>
+        <form class="" ng-submit="addTask()">
+          <input placeholder="Enter a new task." ng-model="newTask">
+        </form>
+        <ul>
+          <li ng-repeat="task in completedTasks | orderBy:'time'">
+            <a href="#" ng-click="removeTask(task)"><i class="fa fa-remove"></i></a> &nbsp;{{ task.title }}
+          </li>
+        </ul>
+      </div>
+      <div class="pure-u-1-3 clockContainer" ng-controller="PomodoroTimerCtrl">
+        <p>{{ currentTime | timecode }}</p>
+        <button class="pure-button pure-button-primary" ng-click="timerStateChange()">{{buttonText}}</button>
+        <button class="pure-button pure-button-primary" ng-show=" currentState == 'work-paused'" ng-click="resetTimer()">Reset</button>
+      </div>
+      <div class="pure-u-1-3"></div>
+    </div>
+      <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+          apiKey: "AIzaSyDIazP7sHS31JwWobKWbQy5WW9Y8_2-UXA",
+          authDomain: "bloctime-b8337.firebaseapp.com",
+          databaseURL: "https://bloctime-b8337.firebaseio.com",
+          storageBucket: "bloctime-b8337.appspot.com",
+          messagingSenderId: "634110021792"
+        };
+        firebase.initializeApp(config);
+      </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+      <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
+      <script src="/scripts/app.js"></script>
+      <script src="/scripts/controllers/PomodoroTimerCtrl.js"></script>
+      <script src="/scripts/services/TaskStore.js"></script>
+      <script src="/scripts/controllers/TaskCtrl.js"></script>
+      <script src="/scripts/filters/timecode.js"></script>
+  </body>
+
+</html>

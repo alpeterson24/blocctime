@@ -1,0 +1,9 @@
+.clockContainer {
+  text-align: center;
+}
+.clockContainer p {
+  font-size: 200%;
+}
+.clockContainer button {
+  width: 7rem;
+}
