@@ -1,9 +1,32 @@
-.clockContainer {
+body {
+  padding-top: 40px;
   text-align: center;
 }
-.clockContainer p {
-  font-size: 200%;
+
+nav {
+  padding-left: 10px;
+  text-align: left;
 }
-.clockContainer button {
-  width: 7rem;
+
+.time h1 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-weight: 100;
+  color: #000000;
+  font-size: 6em ;
+  text-align: center;
+  margin-bottom: .25em;
+}
+
+a {
+  cursor: pointer;
+}
+
+.tasks {
+  border-style: solid;
+  border-color: grey;
+  border-radius: 5px;
+}
+
+.tasks-list {
+  text-align: left;
 }
