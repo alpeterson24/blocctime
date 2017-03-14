@@ -22,9 +22,9 @@ a {
 }
 
 .tasks {
-  border-style: solid;
-  border-color: grey;
+  border: 5px solid #008000;
   border-radius: 5px;
+  background-color: #FF6347;
 }
 
 .tasks-list {
