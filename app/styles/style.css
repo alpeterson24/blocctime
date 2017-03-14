@@ -1,6 +1,7 @@
 body {
   padding-top: 40px;
   text-align: center;
+  background-color: #000000;
 }
 
 nav {
@@ -9,9 +10,9 @@ nav {
 }
 
 .time h1 {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: "Orbitron", "Lucida Grande", sans-serif;
   font-weight: 100;
-  color: #000000;
+  color: #ff0000;
   font-size: 6em ;
   text-align: center;
   margin-bottom: .25em;
@@ -22,11 +23,21 @@ a {
 }
 
 .tasks {
-  border: 5px solid #008000;
-  border-radius: 5px;
-  background-color: #FF6347;
+  border: 3px solid grey;
+  border-radius: 3px;
+  background-color: #000000;
+  color: #ff0000;
 }
 
 .tasks-list {
   text-align: left;
+}
+
+.container {
+  font-family: "Orbitron", sans-serif;
+}
+
+.jumbotron {
+  background-color: #000000!important;
+  border: 3px solid grey;
 }

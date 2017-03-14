@@ -1,26 +1,27 @@
 <section ng-controller="TasksCtrl as tasksCtrl" class="col-sm-4 tasks">
-      <h3>Task History</h3>
-      <form ng-submit="addTask()">
-        <input type="text" ng-model="newTask" class="form-control">
-        <br />
-        <input type="submit" class = "btn btn-success">
-      </form>
+    <h3>Task History</h3>
+    <form ng-submit="addTask()">
+      <input type="text" ng-model="newTask" class="form-control">
       <br />
-      <div class="tasks-list">
-        <li ng-repeat="task in allTasks | orderBy: 'id' : true">
-          {{ task.$value }}
-        </li>
-      </div>
-      <br />
-  </section>
+      <input type="submit" class = "btn btn-primary">
+    </form>
+    <br />
+    <div class="tasks-list">
+      <li ng-repeat="task in allTasks | orderBy: 'id' : true">
+        {{ task.$value }}
+      </li>
+    </div>
+    <br />
+</section>
 
-  <section ng-controller="HomeCtrl as HomeCtrl" >
+<section ng-controller="HomeCtrl as HomeCtrl">
+  <div class="jumbotron col-md-7 pull-right">
     <div class="time"><h1>{{ home.timer.counter | timecode }}</h1></div>
     <div ng-show="!home.timer.isTimeRunning">
       <div ng-show="!home.timer.onBreak">
-        <button ng-click="home.timer.startSession()" class='btn btn-primary'>{{ home.timer.buttonText }}</button>
+        <button ng-click="home.timer.startSession()" class='btn btn-success'>{{ home.timer.buttonText }}</button>
         <br /><br />
-        <a ng-show="home.timer.timeStarted" ng-click="home.timer.reset()">Reset Timer</a>
+        <a ng-show="home.timer.timeStarted" <button class='btn btn-danger' ng-click="home.timer.reset()">Reset Timer</button></a>
       </div>
       <div ng-show="home.timer.onBreak">
         <button ng-click="home.timer.takeBreak()" class='btn btn-primary'>{{ home.timer.buttonText }}</button>
@@ -29,4 +30,5 @@
     <div ng-show="home.timer.isTimeRunning">
       <button ng-click="home.timer.stop()" class='btn btn-primary'>{{ home.timer.buttonText }}</button>
     </div>
-  </section>
+  </div>
+</section>
